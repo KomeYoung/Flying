@@ -83,8 +83,12 @@ class Game extends React.Component {
 }
 
 // ========================================
-
+const element = React.createElement(
+    'h1',
+    {className: 'greeting'},
+    'Hello, world!'
+);
 ReactDOM.render(
-    <Game/>,
+    element,
     document.getElementById('root')
 );
