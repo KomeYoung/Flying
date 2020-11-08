@@ -1,117 +1,151 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './index3.js';
 import reportWebVitals from './reportWebVitals';
+import ComponentA from "./index4";
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
 
-function formatDate(date) {
-    return date.toLocaleDateString();
-}
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
 
-function Avatar(props) {
-    return (
-        <img
-            className="Avatar"
-            src={props.user.avatarUrl}
-            alt={props.user.name}
-        />
-    );
-}
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
 
-function UserInfo(props) {
-    return (
-        <div className="UserInfo">
-            <Avatar user={props.user} />
-            <div className="UserInfo-name">{props.user.name}</div>
-        </div>
-    );
-}
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
 
-function Comment(props) {
-    return (
-        <div className="Comment">
-            <UserInfo user={props.author} />
-            <div className="Comment-text">{props.text}</div>
-            <div className="Comment-date">
-                {formatDate(props.date)}
+    render() {
+        return (
+            <div>
+                <ol start={'11'} >
+                    <li>咖啡</li>
+                    <li>茶</li>
+                    <li>牛奶</li>
+                </ol>
+                <a href={'https://blog.csdn.net/weixin_36302575/article/details/86543649'}>1567252675/t</a>
+                <a href={'https://blog.csdn.net/weixin_36302575/article/details/86543649'}>1567252675</a>
+                {/*<h1>Hello, world!</h1>*/}
+                {/*<h2>It is {this.state.date.toLocaleTimeString()}.</h2>*/}
             </div>
-        </div>
-    );
+        );
+    }
 }
-function Heee(){
-    return <div>
-        <input id="num" value="Mouse"/>
-        <br/>
-        <button type = "button" onClick="myFunction()">试一试</button>
-        <br/>
-        <p id="show"/>
-    </div>
+
+const ss = {
+    dd :function aa(){
+
+        return React.createElement(JamesShow,{date:new Date()},1111);
+        // return <div>
+        //     172872829
+        // </div>
 }
-const comment = {
-    date: new Date(),
-    text: 'I hope you enjoy learning React!',
-    author: {
-        name: 'Hello Kitty',
-        avatarUrl: 'https://placekitten.com/g/64/64',
-    },
 };
 
-function Hello(props){
-    return <div>Hello,{props.toWhat}</div>
-
-}
-// const ss = function ()
-function HelloWorld(){
-    return <Hello toWhat = "fkjfk"/>
-}
-
-
-function myFunction() {
-    let description;
-    const number = Number(document.getElementById("num").value);
-    if (number % 2 == 0) {
-        description = <strong>even</strong>;
-    } else {
-        description = <i>odd</i>;
+class JamesShow extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    document.getElementById("show").innerHTML = number+" is an "+description+"number";
-    // return <div>{number} is an {description} number</div>;
+    render() {
+        return(
+          <div>
+          <button  onClick={this.handleClick}>{this.state.date.toLocaleTimeString()}--fjkfhfjkf</button>
+          </div>
+        );
+    };
+
+    handleClick(){
+        this.setState(state => ({
+            date:new Date()
+        }));
+        // this.setState(function (state) {
+        //     return {date:new Date()};
+        // });
+    }
 }
 
-function NumberDescriber(props) {
-    let description;
-    if (props.number % 2 == 0) {
-        description = <strong>even</strong>;
-    } else {
-        description = <i>odd</i>;
+class Toggle extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isToggleOn: true};
+
+        // 为了在回调中使用 `this`，这个绑定是必不可少的
+        // this.handleClick = this.handleClick.bind(this);
     }
-    return <div>{props.number} is an {description} number</div>;
+    //class fields语法
+    handleClick =()=> {
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+        }));
+    }
+    // handleClick() {
+    //     this.setState(state => ({
+    //         isToggleOn: !state.isToggleOn
+    //     }));
+    // }
+
+    render() {
+        return (
+            <button onClick={this.handleClick}>
+                {this.state.isToggleOn ? 'ON' : 'OFF'}
+            </button>
+        );
+    }
 }
-const elem = <NumberDescriber number = "2"/>
+
+class Count extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {isToggleOn:false}
+    }
+    render() {
+        return <div onClick={this.handleClick}>点我试试{this.state.isToggleOn+''}</div>
+        // return TodoList;
+    }
+
+    handleClick =()=> {
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+        }),() => console.log('111--'+this.state.isToggleOn));
+        console.log(this.state.isToggleOn);
+    }
+//     handleClick(){
+// this.setState(function (state){
+//     return {count:state.count+1}
+// });
+//     }
+}
+
+function Item(props) {
+    return <li>{props.key}</li>;
+}
+
+function TodoList() {
+    const todos = ['finish doc', 'submit pr', 'nag dan to review'];
+    const todos2 = [1,2,3];
+    return (
+        <div>
+            {todos2.map((content) => <Item key={content} message = {content} />)}
+        </div>
+    );
+}
 ReactDOM.render(
-    // HelloWorld(),
-    // <NumberDescriber number = "2"/>,
-    <Heee/>,
-    // <Comment
-    //     date={comment.date}
-    //     text={comment.text}
-    //     author={comment.author}
-    // />,
+    <Count />,
     document.getElementById('root')
 );
-//
-//
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

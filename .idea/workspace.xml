@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10349d28-6318-42fa-ab22-07f5048a4d38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/react2/src/index2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react2/src/index3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react2/src/index4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react2/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/react2/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react2/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/react2/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +86,7 @@
       <workItem from="1603721913885" duration="3914000" />
       <workItem from="1603800043552" duration="109000" />
       <workItem from="1603806263151" duration="156000" />
+      <workItem from="1604847481564" duration="1470000" />
     </task>
     <servers />
   </component>
@@ -101,10 +106,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1603800115925">
+    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1604848642294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603800115925" />
+    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604848642294" />
     <state width="1286" height="59" key="GridCell.Tab.0.bottom" timestamp="1603806467758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -121,9 +126,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1286" height="59" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603806467758" />
-    <state x="53" y="0" key="new project wizard" timestamp="1603806464107">
+    <state x="53" y="0" key="new project wizard" timestamp="1604848667788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="53" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1603806464107" />
+    <state x="53" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1604848667788" />
   </component>
 </project>
